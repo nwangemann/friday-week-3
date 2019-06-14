@@ -1,5 +1,5 @@
 h1 {
-  text-shadow: 2px 2px 40px white;
+  text-shadow: 3px 3px 40px #A6E08F;
   text-align: center;
   color: white;
    background-color: black;
@@ -19,6 +19,8 @@ body {
 
 .output {
   color: white;
+  padding: 15px;
+  margin-left: 25px;
 }
 
 .header {
@@ -29,4 +31,12 @@ body {
   color: white;
   background-color: black;
   border-radius: 10px;
+}
+
+#input1 {
+  color: black;
+}
+
+#input2 {
+  color: black;
 }
