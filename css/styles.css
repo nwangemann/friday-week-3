@@ -1,8 +1,9 @@
 h1 {
-  text-shadow: 3px 3px 40px #A6E08F;
+  text-shadow: 3px 3px 40px #63C132;
   text-align: center;
   color: white;
-   background-color: black;
+  background-color: black;
+  font-family: 'Russo One', sans-serif;
 }
 
 body {
@@ -15,6 +16,7 @@ body {
 .inputStyles {
   padding: 1px;
   color: white;
+  font-size: 15px;
 }
 
 .output {
