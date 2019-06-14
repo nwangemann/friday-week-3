@@ -8,29 +8,27 @@ $(document).ready(function(){
     var userInput = parseInt($("#input1").val());
     var elementCount = userInput + 1
     newArray = arrayMaker(elementCount);
-    $(".output").text(arrayBase);
-    console.log(arrayBase);
-    console.log(arrayReplace);
-    console.log(newArray);
     var replacedArray = []
-    console.log(arrayReplace);
     console.log(arrayBase);
     console.log(newArray);
     arrayBase.forEach(function(num, i) {
-      if (parseInt(num) % 10 === 1 || parseInt(num) === 1) {
+      if ((parseInt(num)) % 10 === 1 || (parseInt(num)) === 1) {
         console.log("Reached loop 1")
-        items.splice(1, num[i],"Beep!");
-      } else if (parseInt(num) % 10 === 2 || parseInt(num) === 2) {
+        replacedArray.push(arrayReplace[1]);
+      } else if ((parseInt(num)) % 10 === 2 || (parseInt(num)) === 2) {
         console.log("Reached loop 2")
-        items.splice(1, num[i],"Boop!");
-      } else if (parseInt(num) % 10 === 3 || parseInt(num) === 3) {
+        replacedArray.push(arrayReplace[2]);
+        return
+      } else if ((parseInt(num)) % 10 === 3 || (parseInt(num)) === 3) {
         console.log("Reached loop 3")
-        items.splice(1, num[i],"I'm sorry, Dave. I'm afraid I can't do that."); 
+        replacedArray.push(arrayReplace[3]);
+        return
       } else {
-        return num
+        replacedArray.push(num);
       };
-      console.log(arrayBase);
+      console.log(replacedArray);
     });
+    $(".output").text(replacedArray);
   });
 });
 
