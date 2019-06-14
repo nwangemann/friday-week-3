@@ -9,24 +9,27 @@
   <title>Beep Boop</title>
 </head>
 <body>
-  <div class="jumbotron">
+  <div class="header">
     <h1>The Magic Number Machine!</h1>
   </div>
   <div class="container">
     <form class="form" action="index.html" method="post">
-      <label for="input1">Please enter a number:</label>
-      <input type="numbers" name="input1" id="input1">
+      <div class="inputStyles">
+        <label for="input1">Please enter a number:</label>
+        <input type="numbers" name="input1" id="input1">
+      </div>
       <br>
-      <label for="input2">Please your name:</label>
-      <input type="text" name="input2" id="input2">
+      <div class="inputStyles">
+        <label for="input2">Please your name:</label>
+        <input type="text" name="input2" id="input2">
+      </div>
       <br>
-      <button type="submit" name="button">Submit</button>
+      <div class="inputStyles">
+        <button type="submit" id="btn1" name="button"><span class="btn">Submit</span></button>
+      </div>
     </form>
-
-
   </div>
   <div class="output">
-
   </div>
 </body>
 </html>

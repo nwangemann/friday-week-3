@@ -1,4 +1,32 @@
 h1 {
-  text-shadow: 2px 2px 40px;
+  text-shadow: 2px 2px 40px white;
   text-align: center;
+  color: white;
+   background-color: black;
+}
+
+body {
+  background-image: url('../img/back.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: black;
+}
+
+.inputStyles {
+  padding: 1px;
+  color: white;
+}
+
+.output {
+  color: white;
+}
+
+.header {
+  padding: 10px;
+}
+
+#btn1 {
+  color: white;
+  background-color: black;
+  border-radius: 10px;
 }
