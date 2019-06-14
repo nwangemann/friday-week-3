@@ -2,11 +2,14 @@ var arrayBase = []
 var newArray = []
 var arrayReplace = ["0","Beep!","Boop!","I'm sorry, Dave. I'm afraid I can't do that."]
 var replacedArray = []
+var finalArray = []
 
 $(document).ready(function(){
   $(".form").submit(function(event) {
     event.preventDefault();
     var userInput = parseInt($("#input1").val());
+    var userName = $("#input2").val();
+    console.log(userName);
     var elementCount = userInput + 1
     newArray = arrayMaker(elementCount);
     console.log(newArray);
@@ -14,20 +17,31 @@ $(document).ready(function(){
     arrayBase.forEach(function(inputNum) {
       replacedArray.push(evaluator(inputNum));
     });
-
-    console.log(replacedArray);
-    $(".output").text(replacedArray);
+    function nameReplace(arrayInput) {
+      var final = "";
+      if ((arrayInput).toString().includes("Dave")) {
+        return final = " I'm sorry, " + userName + ". I'm afraid I can't do that.";
+      } else {
+        return final = arrayInput;
+      }
+    }
+    replacedArray.forEach(function(inputItem) {
+      finalArray.push(nameReplace(inputItem));
+    });
+    console.log(finalArray);
+    $(".output").text(finalArray);
   });
 });
+
 
 function evaluator(arrayItem) {
   var result = "";
   if ((arrayItem).toString().includes("3")) {
-    return result = "I'm sorry, Dave. I'm afraid I can't do that.";
+    return result = " " + "I'm sorry, Dave. I'm afraid I can't do that.";
   } else if ((arrayItem).toString().includes("2")) {
-    return result = "Boop!";
+    return result = " " + "Boop!";
   } else if ((arrayItem).toString().includes("1")) {
-    return result = "Beep!";
+    return result = " " + "Beep!";
   } else {
     return result = arrayItem;
   }
