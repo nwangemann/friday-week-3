@@ -1,19 +1,16 @@
 var arrayBase = []
 var newArray = []
-var arrayReplace = ["0","Beep!","Boop!","I'm sorry, Dave. I'm afraid I can't do that."]
 var replacedArray = []
 var finalArray = []
+var reverseArray = []
 
 $(document).ready(function(){
   $(".form").submit(function(event) {
     event.preventDefault();
     var userInput = parseInt($("#input1").val());
     var userName = $("#input2").val();
-    console.log(userName);
     var elementCount = userInput + 1
     newArray = arrayMaker(elementCount);
-    console.log(newArray);
-    console.log(arrayBase);
     arrayBase.forEach(function(inputNum) {
       replacedArray.push(evaluator(inputNum));
     });
@@ -28,8 +25,15 @@ $(document).ready(function(){
     replacedArray.forEach(function(inputItem) {
       finalArray.push(nameReplace(inputItem));
     });
-    console.log(finalArray);
     $(".output").text(finalArray);
+    $(".output").fadeIn();
+    $(".buttonClass").fadeIn();
+    reverseArray = finalArray.reverse();
+    $(".reverseOutput").text(finalArray);
+    console.log(reverseArray);
+    $("#reverse").click(function() {
+      $(".reverseOutput").fadeToggle();
+    });
   });
 });
 
