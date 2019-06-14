@@ -6,13 +6,17 @@
 
 ## Description
 
-_A web page to Beep Boop a numberical input_
+_A web page to Beep Boop a numerical input_
 
 ## Setup/Installation
 
 Step 1: Clone this repository to your desktop
 
 Step 2: Open index.html
+
+## Website url
+
+https://nwangemann.github.io/friday-week-3/
 
 ## Specs
 
