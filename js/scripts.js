@@ -1,41 +1,4 @@
-var arrayBase = []
-var newArray = []
-var replacedArray = []
-var finalArray = []
-var reverseArray = []
-
-$(document).ready(function(){
-  $(".form").submit(function(event) {
-    event.preventDefault();
-    var userInput = parseInt($("#input1").val());
-    var userName = $("#input2").val();
-    var elementCount = userInput + 1
-    newArray = arrayMaker(elementCount);
-    arrayBase.forEach(function(inputNum) {
-      replacedArray.push(evaluator(inputNum));
-    });
-    function nameReplace(arrayInput) {
-      var final = "";
-      if ((arrayInput).toString().includes("Dave")) {
-        return final = " I'm sorry, " + userName + ". I'm afraid I can't do that.";
-      } else {
-        return final = arrayInput;
-      }
-    }
-    replacedArray.forEach(function(inputItem) {
-      finalArray.push(nameReplace(inputItem));
-    });
-    $(".output").text(finalArray);
-    $(".output").fadeIn();
-    $(".buttonClass").fadeIn(3000);
-    reverseArray = finalArray.reverse();
-    $(".reverseOutput").text(finalArray);
-    console.log(reverseArray);
-    $("#reverse").click(function() {
-      $(".reverseOutput").fadeToggle();
-    });
-  });
-});
+//Business Logic
 
 function evaluator(arrayItem) {
   var result = "";
@@ -59,3 +22,51 @@ function arrayMaker(elementCount) {
     }
   }
 }
+
+function nameReplace(arrayInput) {
+  var final = "";
+  if ((arrayInput).toString().includes("Dave")) {
+    return final = " I'm sorry, " + arrayName + ". I'm afraid I can't do that.";
+  } else {
+    return final = arrayInput;
+  }
+}
+
+
+//User Interface Logic
+var arrayBase = []
+var newArray = []
+var replacedArray = []
+var finalArray = []
+var reverseArray = []
+var arrayName = []
+
+$(document).ready(function(){
+  $(".form").submit(function(event) {
+    event.preventDefault();
+    $(".reverseOutput").fadeOut();
+    arrayName = [];
+    arrayBase = [];
+    finalArray = [];
+    var userInput = parseInt($("#input1").val());
+    var userName = $("#input2").val();
+    arrayName.push(userName);
+    var elementCount = userInput + 1
+    newArray = arrayMaker(elementCount);
+    arrayBase.forEach(function(inputNum) {
+      replacedArray.push(evaluator(inputNum));
+    });
+    replacedArray.forEach(function(inputItem) {
+      finalArray.push(nameReplace(inputItem));
+    });
+    replacedArray = [];
+    $("#output1").text(finalArray);
+    $("#output1").fadeIn();
+    $(".buttonClass").fadeIn(3000);
+    reverseArray = finalArray.reverse();
+    $(".reverseOutput").text(reverseArray);
+    $("#reverse").click(function() {
+      $(".reverseOutput").fadeIn();
+    });
+  });
+});
